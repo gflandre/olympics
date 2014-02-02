@@ -1,8 +1,14 @@
 #!/bin/sh
-./sochi.js
+node sochi.js
 git commit -a -m"sochi data update"
 git push origin master
-git checkout gh-pages
-git merge master
+git checkout -b gh-pages
+mkdir tmp
+mv .* tmp/
+cp tmp/html .
+rm -Rf tmp
+git add .
+git commit -a m"sochi data update"
 git push origin gh-pages
 git checkout master
+git branch -D gh-pages
