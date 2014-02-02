@@ -10,6 +10,7 @@ cp -r tmp/html/* .
 rm -Rf tmp
 git add .
 git commit -a -m"sochi data update"
+git pull origin gh-pages
 git push origin gh-pages
 git checkout master
 git branch -D gh-pages
