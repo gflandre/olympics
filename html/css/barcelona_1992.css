@@ -1,0 +1,31 @@
+#background {
+  background: #ea4b38;
+}
+
+#info-background {
+  background-image: -webkit-linear-gradient(top, #ea4b38 30px, #FFFFFF 31px);
+  background-image:    -moz-linear-gradient(top, #ea4b38 30px, #FFFFFF 31px);
+  background-image:     -ms-linear-gradient(top, #ea4b38 30px, #FFFFFF 31px);
+  background-image:      -o-linear-gradient(top, #ea4b38 30px, #FFFFFF 31px);
+  background-image:         linear-gradient(top, #ea4b38 30px, #FFFFFF 31px);
+}
+
+#olympic-info #flag {
+  background-image: -webkit-linear-gradient(top, #ea4b38 30px, #E5E5E5 31px);
+  background-image:    -moz-linear-gradient(top, #ea4b38 30px, #E5E5E5 31px);
+  background-image:     -ms-linear-gradient(top, #ea4b38 30px, #E5E5E5 31px);
+  background-image:      -o-linear-gradient(top, #ea4b38 30px, #E5E5E5 31px);
+  background-image:         linear-gradient(top, #ea4b38 30px, #E5E5E5 31px);
+}
+
+ul.ranking li .country {
+  color: #ea4b38;
+}
+
+ul.ranking li .chart .bar {
+  background: #ea4b38;
+}
+
+footer p.author a {
+  color: #ea4b38;
+}
