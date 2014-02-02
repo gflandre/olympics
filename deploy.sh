@@ -1,4 +1,5 @@
 #!/bin/sh
+npm install
 node sochi.js
 git commit -a -m"sochi data update"
 git push origin master
