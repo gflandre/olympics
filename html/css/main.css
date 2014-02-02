@@ -303,3 +303,59 @@ footer p.credits a {
   color: #333333;
   background: #E5E5E5;
 }
+
+/*
+ * MOBILE
+ */
+
+@media screen and (max-width: 640px) {
+
+#header nav a,
+ul.ranking li .chart,
+#olympic-info .text a.toggle-ranking,
+footer .credits {
+  display: none;
+}
+
+#header,
+#olympic-info,
+ul.ranking,
+footer {
+  width: 100%;
+}
+
+ul.ranking li .rank {
+  width: 35px;
+}
+ul.ranking li .country {
+  width: 230px;
+}
+ul.ranking li .medal {
+  width: 50px;
+}
+ul.ranking li .population {
+  width: 190px;
+}
+
+#olympic-info .text h2 {
+  font-size: 40px;
+}
+
+footer {
+  padding-right: 0;
+  font-size: 20px;
+}
+
+#menu i.fa {
+  font-size: 40px;
+}
+
+#menu .popover {
+  border-width: 4px;
+}
+
+#menu .popover .popover-content ul li a {
+  font-size: 28px;
+}
+
+}
