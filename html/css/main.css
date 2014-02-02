@@ -273,7 +273,7 @@ footer p.credits a {
 #menu .popover .popover-content {
   padding-left: 0;
   padding-right: 0;
-  max-height: 500px;
+  max-height: 450px;
   overflow-y: scroll;
 }
 
@@ -291,7 +291,7 @@ footer p.credits a {
 #menu .popover .popover-content ul li a {
   text-decoration: none;
   color: #333333;
-  font-size: 18px;
+  font-size: 20px;
   display: block;
   padding-left: 10px;
   padding-right: 10px;

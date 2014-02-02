@@ -33,6 +33,10 @@ var toggle_menu = function() {
     container: '#menu',
     html: true
   });
+
+  jQuery('#main').click(function(e) {
+    jQuery('#menu .toggle-popover').popover('hide');
+  });
 };
 
 var animate_bars = function() {
