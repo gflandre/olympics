@@ -266,8 +266,18 @@ footer p.credits a {
 }
 
 #menu .popover .arrow {
-  border-bottom-color: #FFFFFF;
+  border-bottom-color: #f7f7f7;
   left: 20px !important;
+}
+
+#menu .popover.bottom .arrow:after {
+  border-bottom-color: #f7f7f7;
+}
+
+#menu .popover .popover-title {
+  font-family: 'Alegreya Sans', sans-serif;
+  font-size: 20px;
+  font-weight: 300;
 }
 
 #menu .popover .popover-content {
@@ -301,7 +311,25 @@ footer p.credits a {
 #menu .popover .popover-content ul li a:hover {
   text-decoration: none;
   color: #333333;
-  background: #E5E5E5;
+  background: #f7f7f7;
+}
+
+/*
+ * SOCIAL
+ */
+
+.social {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.social .fb-like {
+  margin-right: 10px !important;
+}
+
+.social #___plusone_0 {
+  margin-left: 10px !important;
 }
 
 /*
@@ -313,7 +341,8 @@ footer p.credits a {
 #header nav a,
 ul.ranking li .chart,
 #olympic-info .text a.toggle-ranking,
-footer .credits {
+footer .credits,
+.social {
   display: none;
 }
 

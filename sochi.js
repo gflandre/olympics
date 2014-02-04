@@ -192,7 +192,9 @@ var past_data_scrapper = function(spec, my) {
       "Tonga": 104941, "Turkey": 73997128, "Ukraine": 45593300,
       "United States": 313914040, "Uzbekistan": 29776850,
       "Venezuela": 29954782, "Virgin Isl, B": 27800,
-      "Virgin Isl, US": 106405, "Zimbabwe": 13724317
+      "Virgin Isl, US": 106405, "Zimbabwe": 13724317, "Dominica": 71684,
+      "Nepal": 27474377, "Paraguay": 6687361, "Macedonia": 2105575,
+      "Timor-Leste": 1210233, "Togo": 6642928
     };
 
     var data = {
@@ -226,7 +228,12 @@ var past_data_scrapper = function(spec, my) {
               }
             }
             else if(j === 1) {
-              country_data.country = column.text().trim();
+              if(!/^Independent/.test(column.text().trim())) {
+                country_data.country = column.text().trim();
+                if(/Macedonia/.test(country_data.country)) {
+                  country_data.country = 'Macedonia';
+                }
+              }
             }
             else if(j === 2) {
               country_data.gold = parseInt(column.text(), 10);
@@ -250,7 +257,9 @@ var past_data_scrapper = function(spec, my) {
 
           country_data.population = country_population[country_data.country];
 
-          data.medal_count.push(country_data);
+          if(country_data.country) {
+            data.medal_count.push(country_data);
+          }
         }
 
         data.ranking = compute_ranking(data.medal_count);
@@ -277,9 +286,13 @@ var past_data_scrapper = function(spec, my) {
                 });
                 html = replace_variable('official_ranking', official_ranking, html);
 
+                html = replace_variable('tweet',
+                         "Check out Sochi 2014's Medal Count by Population - " +
+                         data.ranking[0].country + " is #1!", html);
+
                 fwk.async.parallel([
                   function(wcb_) {
-                    fs.writeFile(my.OUTPUT_DIR + '/sochi_2014_winter_olympics_medal_count_by_population.html',
+                    fs.writeFile(my.OUTPUT_DIR + '/sochi-2014-winter-olympics-medal-count-by-population.html',
                                  html, wcb_);
                   },
                   function(wcb_) {

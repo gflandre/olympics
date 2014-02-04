@@ -29,6 +29,7 @@ var toggle_menu = function() {
 
   jQuery('#menu .toggle-popover').popover({
     placement: 'bottom',
+    title: 'All Olympics',
     content: content,
     container: '#menu',
     html: true

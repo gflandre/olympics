@@ -94,8 +94,8 @@ var html_generator = function(spec, my) {
   // # idfy
   //
   idfy = function(olympic) {
-    return olympic.city.replace('.', '').replace(/ /g, '_').toLowerCase() +
-           '_' + olympic.year;
+    return olympic.city.replace('.', '').replace(/ /g, '-').toLowerCase() +
+           '-' + olympic.year;
   };
 
   //
@@ -156,7 +156,7 @@ var html_generator = function(spec, my) {
       }
 
       result = '<li>' +
-                  '<a href="' + idfy(olympic) + '_' + olympic.season + '_olympics_medal_count_by_population.html" class="olympic" style="border-left-color:' + olympic.color + '">' +
+                  '<a href="' + idfy(olympic) + '-' + olympic.season + '-olympics-medal-count-by-population.html" class="olympic" style="border-left-color:' + olympic.color + '">' +
                     olympic.city + ' ' + olympic.year +
                   '</a>' + result;
     });
@@ -223,7 +223,7 @@ var html_generator = function(spec, my) {
                           }
 
                           var previous_id = idfy(JSON_DATA[i - 1]);
-                          previous_link = '<a href="' + previous_id + '_' + JSON_DATA[i - 1].season + '_olympics_medal_count_by_population.html">' +
+                          previous_link = '<a href="' + previous_id + '-' + JSON_DATA[i - 1].season + '-olympics-medal-count-by-population.html">' +
                                           '<i class="fa fa-angle-left"></i>' +
                                           JSON_DATA[i - 1].city + ' ' +
                                           JSON_DATA[i - 1].year +
@@ -234,7 +234,7 @@ var html_generator = function(spec, my) {
                         var next_link = '&nbsp;';
                         if(i < JSON_DATA.length - 1) {
                           var next_id = idfy(JSON_DATA[i + 1]);
-                          next_link = '<a href="' + next_id + '_' + JSON_DATA[i + 1].season + '_olympics_medal_count_by_population.html">' +
+                          next_link = '<a href="' + next_id + '-' + JSON_DATA[i + 1].season + '-olympics-medal-count-by-population.html">' +
                                       JSON_DATA[i + 1].city + ' ' +
                                       JSON_DATA[i + 1].year +
                                       '<i class="fa fa-angle-right"></i>' +
@@ -242,7 +242,7 @@ var html_generator = function(spec, my) {
                         }
                         html = replace_variable('next_link', next_link, html);
 
-                        html = replace_variable('flag', olympic.country_image, html);
+                        html = replace_variable('flag', 'img/' + olympic.country.replace(/ /g, '_') + '.png', html);
                         html = replace_variable('city', olympic.city, html);
                         html = replace_variable('year', olympic.year, html);
                         html = replace_variable('season', olympic.season.charAt(0).toUpperCase() + olympic.season.slice(1), html);
@@ -260,9 +260,14 @@ var html_generator = function(spec, my) {
                         });
                         html = replace_variable('official_ranking', official_ranking, html);
 
+                        html = replace_variable('tweet',
+                                 "Check out " + olympic.city + " " +
+                                 olympic.year + "'s Medal Count by Population - " +
+                                 olympic.ranking[0].country + " is #1!", html);
+
                         html = replace_variable('menu', menu, html);
 
-                        fs.writeFile(my.OUTPUT_DIR + '/' + olympic_id + '_' + olympic.season + '_olympics_medal_count_by_population.html',
+                        fs.writeFile(my.OUTPUT_DIR + '/' + olympic_id + '-' + olympic.season + '-olympics-medal-count-by-population.html',
                                      html, pcb_)
                       }
                     });
