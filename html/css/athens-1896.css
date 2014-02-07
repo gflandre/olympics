@@ -29,3 +29,18 @@ ul.ranking li .chart .bar {
 footer p.author a {
   color: #e1d4a0;
 }
+
+#olympic-info input#toggle:checked {
+  border-color: #e1d4a0;
+}
+
+#olympic-info input#toggle:checked:before {
+  background: #e1d4a0; /* Old browsers */
+  background: -moz-linear-gradient(top,  #e1d4a0 0%, #e1d4a0 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e1d4a0), color-stop(100%,#e1d4a0)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  rgba(0,106,179,100,1) 0%,#e1d4a0 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #e1d4a0 0%,#e1d4a0 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #e1d4a0 0%,#e1d4a0 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #e1d4a0 0%,#e1d4a0 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e1d4a0', endColorstr='#e1d4a0',GradientType=0 ); /* IE6-9 */
+}

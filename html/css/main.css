@@ -114,20 +114,28 @@ h1 {
   font-size: 22px;
 }
 
-#olympic-info .text a.toggle-ranking {
+#olympic-info .text .toggle-ranking {
   position: absolute;
   bottom: 4px;
   right: 0;
-  font-size: 20px;
+  font-size: 16px;
   color: #ACACAC;
   text-decoration: none;
 }
-#olympic-info .text a.toggle-ranking:hover {
-  color: #999999;
-}
 
-#olympic-info .text a.toggle-ranking.toggle-hide {
-  display: none;
+#olympic-info .text .toggle-ranking span {
+  vertical-align: middle;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+#olympic-info .text .toggle-ranking span.selected {
+  font-weight: 400;
+}
+#olympic-info .text .toggle-ranking span.official {
+  margin-right: 5px;
+}
+#olympic-info .text .toggle-ranking span.by-population {
+  margin-left: 5px;
 }
 
 /*
@@ -322,14 +330,100 @@ footer p.credits a {
   position: absolute;
   top: 0;
   right: 0;
+  height: 20px;
+  overflow: hidden;
+  width: 156px;
 }
 
 .social .fb-like {
+  position: absolute;
+  bottom: 0;
+  left: 0;
   margin-right: 10px !important;
 }
 
+.social .twitter-share-button {
+  position: absolute;
+  bottom: 0;
+  left: 58px;
+}
+
 .social #___plusone_0 {
+  position: absolute;
+  bottom: 0;
+  right: 0;
   margin-left: 10px !important;
+}
+
+/*
+ * TOGGLE
+ */
+
+#olympic-info input#toggle {
+  display: inline-block;
+  position: relative;
+  /* box-shadow: inset 0 0 0px 1px #d5d5d5; */
+  border-width: 1.5px;
+  border-style: solid;
+  border-color: #d5d5d5;
+  box-sizing: border-box;
+  text-indent: -5000px;
+  height: 23px;
+  width: 50px;
+  border-radius: 8.5px;
+  -webkit-appearance: none;
+}
+
+#olympic-info input#toggle:checked {
+  -webkit-transition: .25s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* background OFF */
+
+#olympic-info input#toggle:before {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 23px;
+  width: 28px;
+  border-radius: 8.5px;
+  top: 0px;
+  left: 0px;
+  background: rgba(19,191,17,0);
+  box-sizing: border-box;
+  -webkit-transition: .25s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* button OFF */
+
+#olympic-info input#toggle:after {
+  content: "";
+  position: absolute;
+  display: block;
+  height: 22px;
+  width: 28px;
+  top: 0px;
+  left: 0px;
+  border-radius: 8.5px;
+  background: white;
+  box-shadow: 0 0px 1px rgba(0,0,0,.4), 0 2px 2px rgba(0,0,0,.1);
+  -webkit-transition: .2s cubic-bezier(0.77, 0, 0.175, 1);
+}
+
+/* background ON */
+
+#olympic-info input#toggle:checked:before {
+  width: 48px;
+}
+
+/* button ON */
+
+#olympic-info input#toggle:checked:after {
+  left: 20.25px;
+}
+
+input#toggle:focus {
+  outline: none;
 }
 
 /*
@@ -340,7 +434,7 @@ footer p.credits a {
 
 #header nav a,
 ul.ranking li .chart,
-#olympic-info .text a.toggle-ranking,
+#olympic-info .text .toggle-ranking,
 footer .credits,
 .social {
   display: none;

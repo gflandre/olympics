@@ -5,22 +5,21 @@ jQuery(document).ready(function() {
 });
 
 var toggle_ranking = function() {
-  jQuery('.toggle-ranking.toggle-show').click(function(e) {
-    e.preventDefault();
-    jQuery('.ranking.custom').hide();
-    jQuery('.ranking.official').show();
-    jQuery('.toggle-ranking.toggle-hide').show();
-    jQuery(this).hide();
-    animate_bars();
-  });
-
-  jQuery('.toggle-ranking.toggle-hide').click(function(e) {
-    e.preventDefault();
-    jQuery('.ranking.official').hide();
-    jQuery('.ranking.custom').show();
-    jQuery('.toggle-ranking.toggle-show').show();
-    jQuery(this).hide();
-    animate_bars();
+  jQuery('#toggle').change(function(e) {
+    if(jQuery(this).is(':checked')) {
+      jQuery('.toggle-ranking .official').removeClass('selected');
+      jQuery('.toggle-ranking .by-population').addClass('selected');
+      jQuery('.ranking.official').fadeOut(function() {
+        jQuery('.ranking.custom').fadeIn();
+      });
+    }
+    else {
+      jQuery('.toggle-ranking .by-population').removeClass('selected');
+      jQuery('.toggle-ranking .official').addClass('selected');
+      jQuery('.ranking.custom').fadeOut(function() {
+        jQuery('.ranking.official').fadeIn();
+      });
+    }
   });
 };
 
@@ -29,7 +28,7 @@ var toggle_menu = function() {
 
   jQuery('#menu .toggle-popover').popover({
     placement: 'bottom',
-    title: 'All Olympics',
+    title: 'All Olympic Games',
     content: content,
     container: '#menu',
     html: true
