@@ -222,7 +222,7 @@ var past_data_scrapper = function(spec, my) {
             var column = columns.eq(j);
 
             if(j === 0) {
-              if(/=/.text(column.text())) {
+              if(/=/.test(column.text())) {
                 country_data.rank = parseInt(column.text().substring(1), 10);
               }
               else {
