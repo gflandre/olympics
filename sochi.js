@@ -339,7 +339,7 @@ var past_data_scrapper = function(spec, my) {
     });
   };
 
-  setInterval(main, 5 * 60 * 60 * 1000);
+  setInterval(main, 5 * 60 * 1000);
 
   return that;
 };
