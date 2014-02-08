@@ -224,7 +224,7 @@ var past_data_scrapper = function(spec, my) {
             if(j === 0) {
               country_data.rank = parseInt(column.text(), 10);
               if(isNaN(country_data.rank)) {
-                country_data.rank = '-';
+                country_data.rank = '&middot;';
               }
             }
             else if(j === 1) {
