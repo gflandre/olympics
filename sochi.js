@@ -333,14 +333,13 @@ var past_data_scrapper = function(spec, my) {
           }
           else {
             console.log('DONE.');
-            process.exit();
           }
         });
       }
     });
   };
 
-  main();
+  setInterval(main, 5 * 60 * 60 * 1000);
 
   return that;
 };
