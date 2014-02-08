@@ -13,8 +13,8 @@ var past_data_scrapper = function(spec, my) {
   my = my || {};
 
   my.DATA_URL = "http://www.sochi2014.com/en/medal-standings";
-  my.TEMPLATE_DIR = 'template';
-  my.OUTPUT_DIR = 'html';
+  my.TEMPLATE_DIR = __dirname + '/template';
+  my.OUTPUT_DIR = __dirname + '/html';
 
   //
   // #### _public methods_
