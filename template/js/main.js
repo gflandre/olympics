@@ -35,7 +35,19 @@ var toggle_menu = function() {
   });
 
   jQuery('#main').click(function(e) {
-    jQuery('#menu .toggle-popover').popover('hide');
+    if(e.target.className === 'official') {
+      if(jQuery('#toggle').is(':checked')) {
+        jQuery('#toggle').click();
+      }
+    }
+    else if(e.target.className === 'by-population') {
+      if(!jQuery('#toggle').is(':checked')) {
+        jQuery('#toggle').click();
+      }
+    }
+    else {
+      jQuery('#menu .toggle-popover').popover('hide');
+    }
   });
 };
 

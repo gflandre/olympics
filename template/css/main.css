@@ -90,6 +90,7 @@ h1 {
 
 #olympic-info #flag img {
   height: 80px;
+  min-width: 80px;
   border: 4px solid #FFFFFF;
 }
 
@@ -127,6 +128,7 @@ h1 {
   vertical-align: middle;
   margin-bottom: 10px;
   display: inline-block;
+  cursor: default;
 }
 #olympic-info .text .toggle-ranking span.selected {
   font-weight: 400;
