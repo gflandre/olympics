@@ -8,7 +8,14 @@ var cheerio;
 var http;
 var fs;
 
-var past_data_scrapper = function(spec, my) {
+//
+// # sochi
+//
+// Every 15 minutes, install dependencies, retrieves the latest medal count
+// data, generates the new html file, and deploys the new version to
+// github pages.
+//
+var sochi = function(spec, my) {
   var _super = {};
   my = my || {};
 
@@ -381,9 +388,9 @@ var past_data_scrapper = function(spec, my) {
         });
       });
     });
-  }, 20 * 1000);
+  }, 15 * 60 * 1000);
 
   return that;
 };
 
-past_data_scrapper();
+sochi();
