@@ -62,7 +62,7 @@ var past_data_scrapper = function(spec, my) {
       sys.puts(stdout);
       cb_();
     };
-    exec("sh ./deploy.sh", puts);
+    exec("sh " + __dirname + "/deploy.sh", puts);
   };
 
   //
@@ -381,7 +381,7 @@ var past_data_scrapper = function(spec, my) {
         });
       });
     });
-  }, 10 * 1000);
+  }, 20 * 1000);
 
   return that;
 };
