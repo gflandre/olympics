@@ -282,6 +282,8 @@ var past_data_scrapper = function(spec, my) {
 
                 var official_ranking = '';
                 data.medal_count.forEach(function(country) {
+                  country.score = get_score(country.gold, country.silver,
+                                            country.bronze, country.population);
                   official_ranking += get_ranking(country, data.ranking[0]);
                 });
                 html = replace_variable('official_ranking', official_ranking, html);
