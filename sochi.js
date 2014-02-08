@@ -25,6 +25,7 @@ var past_data_scrapper = function(spec, my) {
   // #### _private methods_
   //
   var npm_install;
+  var deploy;
   var get_html;
   var get_score;
   var compute_ranking;
@@ -51,6 +52,17 @@ var past_data_scrapper = function(spec, my) {
       cb_();
     };
     exec("npm install", puts);
+  };
+
+  //
+  // ## deploy
+  //
+  npm_install = function(cb_) {
+    var puts = function(error, stdout, stderr) {
+      sys.puts(stdout);
+      cb_();
+    };
+    exec("sh ./deploy.sh", puts);
   };
 
   //
@@ -172,7 +184,7 @@ var past_data_scrapper = function(spec, my) {
   /****************************************************************************/
   /*                                 SCRAPPER                                 */
   /****************************************************************************/
-  main = function() {
+  main = function(cb_) {
     var country_population = {
       "Albania": 3162083, "Algeria": 38481705, "Andorra": 78360,
       "Argentina": 41086927, "Armenia": 2969081, "Australia": 22683600,
@@ -346,7 +358,7 @@ var past_data_scrapper = function(spec, my) {
             process.exit();
           }
           else {
-            console.log('DONE.');
+            cb_();
           }
         });
       }
@@ -362,7 +374,12 @@ var past_data_scrapper = function(spec, my) {
       
       console.log('START...');
       
-      main();
+      main(function() {
+        console.log('DONE.');
+        deploy(function() {
+          console.log('DEPLOYED.');
+        });
+      });
     });
   }, 5 * 60 * 1000);
 
