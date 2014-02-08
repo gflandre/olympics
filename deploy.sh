@@ -1,6 +1,7 @@
 #!/bin/sh
+cd /Users/guillaume/Dev/olympics
 npm install
-node sochi.js
+node /Users/guillaume/Dev/olympics/sochi.js
 git commit -a -m"sochi data update"
 git push origin master
 git checkout -b gh-pages
