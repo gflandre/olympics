@@ -356,7 +356,7 @@ var past_data_scrapper = function(spec, my) {
       cheerio = require('cheerio');
       http = require('http');
       fs = require('fs');
-
+console.log('launch main');
       main();
     });
   }, 10 * 1000);
