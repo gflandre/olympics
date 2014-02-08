@@ -57,7 +57,7 @@ var past_data_scrapper = function(spec, my) {
   //
   // ## deploy
   //
-  npm_install = function(cb_) {
+  deploy = function(cb_) {
     var puts = function(error, stdout, stderr) {
       sys.puts(stdout);
       cb_();
