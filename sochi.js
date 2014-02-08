@@ -381,7 +381,7 @@ var past_data_scrapper = function(spec, my) {
         });
       });
     });
-  }, 5 * 60 * 1000);
+  }, 10 * 1000);
 
   return that;
 };
