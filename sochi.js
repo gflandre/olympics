@@ -46,7 +46,10 @@ var past_data_scrapper = function(spec, my) {
   // ## npm_install
   //
   npm_install = function(cb_) {
-    var puts = function(error, stdout, stderr) { sys.puts(stdout) };
+    var puts = function(error, stdout, stderr) {
+      sys.puts(stdout);
+      cb_();
+    };
     exec("npm install", puts);
   };
 
