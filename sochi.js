@@ -359,10 +359,12 @@ var past_data_scrapper = function(spec, my) {
       cheerio = require('cheerio');
       http = require('http');
       fs = require('fs');
-console.log('launch main');
+      
+      console.log('START...');
+      
       main();
     });
-  }, 10 * 1000);
+  }, 5 * 60 * 1000);
 
   return that;
 };
