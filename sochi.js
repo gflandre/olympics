@@ -331,11 +331,6 @@ var sochi = function(spec, my) {
                          "Check out Sochi 2014's Medal Count by Population - " +
                          data.ranking[0].country + " is #1!", html);
 
-                var date = new Date();
-                html = replace_variable('last_update',
-                                        ,
-                                        html);
-
                 fwk.async.parallel([
                   function(wcb_) {
                     fs.writeFile(my.OUTPUT_DIR + '/sochi-2014-winter-olympics-medal-count-by-population.html',
