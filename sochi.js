@@ -227,7 +227,8 @@ var sochi = function(spec, my) {
       "Venezuela": 29954782, "Virgin Isl, B": 27800,
       "Virgin Isl, US": 106405, "Zimbabwe": 13724317, "Dominica": 71684,
       "Nepal": 27474377, "Paraguay": 6687361, "Macedonia": 2105575,
-      "Timor-Leste": 1210233, "Togo": 6642928, "Afghanistan": 29824536
+      "Timor-Leste": 1210233, "Togo": 6642928, "Afghanistan": 29824536,
+      "India": 1236686732
     };
 
     var data = {
